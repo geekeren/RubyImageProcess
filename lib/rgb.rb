@@ -28,4 +28,9 @@ class RGB
   def getContrary
     RGB.new(255-@R, 255-@G, 255-@B)
   end
+
+  def getGreyRGB
+    grey = getGreyLevel
+    RGB.new(grey, grey, grey)
+  end
 end

@@ -5,6 +5,7 @@ class BitMap
     @file = File.open(file, "rb+")
     @bitMapFileHeader = @file.read(14).unpack('a2LS2L')
 
+
     @type=@bitMapFileHeader[0] #文件类型，BM：BMP图片
 
     if @type!="BM"
@@ -15,7 +16,7 @@ class BitMap
     @size=@bitMapFileHeader[1] #文件大小
     @offBits=@bitMapFileHeader[4] #图像数据的偏移字节
     @bitMapInfoHeader = @file.read(40).unpack('L3S2L6')
-
+    print "文件头：" ,@bitMapFileHeader,"\n","信息头：" ,@bitMapInfoHeader
     @infoSize=@bitMapInfoHeader[0] #图片信息字段大小
     @width=@bitMapInfoHeader[1] #图片宽度
     @height=@bitMapInfoHeader[2] #图片高度
