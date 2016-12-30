@@ -1,1 +1,1 @@
-"# RubyImageProcess" 
+# RubyImageProcess

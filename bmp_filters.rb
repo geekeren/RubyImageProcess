@@ -36,4 +36,16 @@ class BmpFilters
       end
     end
   end
+
+  #浮雕效果
+  def self.emboss(bmp)
+    for i in 0 .. bmp.height - 1
+      for j in 0 .. bmp.width - 1
+        rgb = bmp.getRGB(i, j)
+        bmp.setRGB(i, j, rgb.getContrary)
+      end
+    end
+
+  end
+
 end
